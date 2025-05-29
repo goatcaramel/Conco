@@ -1,0 +1,92 @@
+	<meta charset="UTF-8">
+	<title>ITB Received</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- mobile-friendly -->
+	<style>
+
+		.background-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-image: url('https://www.conconow.com/wp-content/uploads/2015/09/49er-Levi-Stadium-Conco-Companies2.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			min-height: 100vh;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+
+		.content-box {
+			background-color: rgba(255, 255, 255, 0.95);
+			padding: 30px 20px;
+			border-radius: 8px;
+			max-width: 600px;
+			width: 100%;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;
+		}
+
+		.content-box h1 {
+			font-size: 24pt;
+			color: #87D300;
+			margin-top: 0;
+		}
+
+		.content-box p {
+			font-size: 11pt;
+			color: #333;
+			line-height: 1.6;
+		}
+
+		.conco-main-page-redirect {
+			cursor: pointer;
+			border: none;
+			border-radius: 2px;
+			background-color: transparent;
+		}
+
+		.conco-main-page-redirect:hover {
+			opacity: 0.8;
+		}
+
+		.conco-main-page-redirect:active {
+			opacity: 0.5;
+		}
+
+		@media (max-width: 600px) {
+			.content-box {
+				padding: 20px 15px;
+			}
+
+			.content-box h1 {
+				font-size: 18pt;
+			}
+
+			.content-box p {
+				font-size: 10pt;
+			}
+		}
+	</style>
+
+	<div class="background-container">
+		<div class="content-box">
+			<h1>ITB Received</h1>
+			<p>
+				Conco has received your ITB for
+				<strong>{!Get_Opp.Project_Name__r.Name}</strong>.<br>
+				We will provide a <strong>{!BidType}</strong> for this
+				project.<br><br>
+				{!Get_Opp.Estimator__r.FirstName}
+				{!Get_Opp.Estimator__r.LastName}
+				(<a href="mailto:{!Get_Opp.Estimator__r.Email}">{!Get_Opp.Estimator__r.Email}</a>)
+				will be our estimator.<br><br>
+				{!TimelinePhrasing}<br>
+				{!LastLinePhrasing}
+			</p>
+			<a href="https://www.conconow.com/" class="conco-main-page-redirect">
+				<img src="https://velocity-app-9197.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=068Vb000006KztW&amp;operationContext=DELIVERY&amp;contentId=05TVb000007I3iA&amp;page=0&amp;d=/a/Vb000003Ec25/X31.rngNX3LXfFqI8i32mN.quofV0bM.e89rgDRF0Ms&amp;oid=00DHp000003V1K0&amp;dpt=null&amp;viewId="
+					alt="Conco-Logo" style="max-width: 120px; margin-top: 20px;">
+			</a>
+		</div>
+	</div>
