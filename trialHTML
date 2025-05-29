@@ -1,0 +1,17 @@
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="left" valign="top" style="padding: 10px;">
+<!-- Email content starts here -->
+<p><strong style="color: rgb(135, 211, 0); font-size: 26pt; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;">ITB Received</strong><br><br>
+<span style="font-size: 10.5pt; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;">
+        Conco has received your ITB for {!Get_Opp.Project_Name__r.Name}. We will provide a {!BidType} for this project. {!Get_Opp.Estimator__r.FirstName} {!Get_Opp.Estimator__r.LastName} ({!Get_Opp.Estimator__r.Email}) will be our estimator. {!TimelinePhrasing}<br><br>
+{!LastLinePhrasing}
+</span>
+</p>
+<!-- Email content ends here -->
+</td>
+<td align="right" valign="top" style="padding: 10px;">
+<img src="https://velocity-app-9197.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=068Vb000006KztW&amp;operationContext=DELIVERY&amp;contentId=05TVb000007I3iA&amp;page=0&amp;d=/a/Vb000003Ec25/X31.rngNX3LXfFqI8i32mN.quofV0bM.e89rgDRF0Ms&amp;oid=00DHp000003V1K0&amp;dpt=null&amp;viewId=" alt="Conco-Logo" style="max-width: 150px;">
+</td>
+</tr>
+</table>
