@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>ITB Received</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+
+		.background-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-image: url('background collage 2.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			min-height: 100vh;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+
+		.banner-header {
+			background-color: rgba(255, 255, 255, 0.95);
+			/* semi-transparent black */
+			color: #87D300;
+			font-size: 28pt;
+			font-weight: 700;
+			padding: 15px 30px;
+			margin-bottom: 20px;
+			text-align: center;
+			border-radius: 6px;
+			font-family: Noto Sans, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		.content-box {
+			background-color: rgba(255, 255, 255, 0.95);
+			padding: 30px 20px;
+			border-radius: 8px;
+			max-width: 600px;
+			width: 100%;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			font-family: Noto Sans, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;
+		}
+
+		.content-box h1 {
+			display: none;
+			/* hidden since the header is now separated */
+		}
+
+		.content-box p {
+			font-size: 13pt;
+			color: #333;
+			line-height: 1.6;
+		}
+
+		.conco-main-page-redirect {
+			cursor: pointer;
+			border: none;
+			border-radius: 2px;
+			background-color: transparent;
+		}
+
+		.conco-main-page-redirect:hover {
+			opacity: 0.8;
+		}
+
+		.conco-main-page-redirect:active {
+			opacity: 0.5;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 20px;
+			margin-top: 30px;
+		}
+
+		.footer-links a {
+			text-decoration: none;
+			color: #0077cc;
+			font-size: 10.5pt;
+			font-family: Noto Sans, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;
+			transition: color 0.2s;
+		}
+
+		.footer-links a:hover {
+			text-decoration: underline;
+			color: #005fa3;
+		}
+
+
+		@media (max-width: 600px) {
+			.banner-header {
+				font-size: 18pt;
+				padding: 10px 20px;
+			}
+
+			.content-box {
+				padding: 20px 15px;
+			}
+
+			.content-box p {
+				font-size: 10pt;
+				font-weight: 600;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="background-container">
+		<!-- Transparent Banner Title -->
+		<div class="banner-header">
+			ITB Received
+		</div>
+
+		<!-- Main White Content Box -->
+		<div class="content-box">
+			<p>
+				Conco has received your ITB for
+				<strong>{!Get_Opp.Project_Name__r.Name}</strong>.<br>
+				We will provide a <strong>{!BidType}</strong> for this project.<br><br>
+				{!Get_Opp.Estimator__r.FirstName}
+				{!Get_Opp.Estimator__r.LastName}
+				(<a href="mailto:{!Get_Opp.Estimator__r.Email}">{!Get_Opp.Estimator__r.Email}</a>) will be our
+				estimator.<br><br>
+				{!TimelinePhrasing}<br>
+				{!LastLinePhrasing}
+			</p>
+			<a href="https://www.conconow.com/" class="conco-main-page-redirect">
+				<img src="https://velocity-app-9197.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=068Vb000006KztW&amp;operationContext=DELIVERY&amp;contentId=05TVb000007I3iA&amp;page=0&amp;d=/a/Vb000003Ec25/X31.rngNX3LXfFqI8i32mN.quofV0bM.e89rgDRF0Ms&amp;oid=00DHp000003V1K0&amp;dpt=null&amp;viewId="
+					alt="Conco-Logo" style="max-width: 120px; margin-top: 20px;">
+			</a>
+			<div class="footer-links">
+				<a href="https://www.conconow.com/services/">Our Services</a>
+				<a href="https://www.conconow.com/projects/">View Projects</a>
+				<a href="https://www.conconow.com/contact/">Contact Us</a>
+				<a href="https://www.conconow.com/about">About Conco</a>
+			</div>
+		</div>
+
+		<!-- Spacer between boxes -->
+		<div style="height: 30px;"></div>
+
+		<!-- Second Content Box: About Conco -->
+		<div class="content-box">
+			<div style="display: flex; flex-direction: column; gap: 20px; flex-wrap: wrap;">
+
+				<!-- Top: Company Description -->
+				<div style="flex: 1; min-width: 250px;">
+					<p style="color: #333;">
+						<strong>Nationally Recognized for Excellence</strong><br><br>
+						The Conco Companies have been delivering premium concrete services throughout the Western U.S.
+						since 1959.
+						As a leader in the industry, we continue to grow our operations and upgrade and expand
+						facilities and equipment
+						as well as our geographic footprint to better serve customers. The Conco name has been an
+						integral partner on
+						many architecturally distinguished projects, and we commit to bringing that same standard of
+						excellence to each
+						job we undertake.<br><br>
+
+						<strong>Headquartered in the Bay Area</strong>, we currently serve the following cities and
+						surrounding areas:
+						Los Angeles, San Francisco, San Jose, Sacramento, Seattle, Portland, Bay Area, Reno, and San
+						Diego.
+					</p>
+				</div>
+
+				<!-- Bottom: Side-by-Side Headshot and Bio -->
+				<div style="display: flex; flex-direction: row; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+					<!-- Headshot -->
+					<div style="flex-shrink: 0;">
+						<img src="https://www.conconow.com/wp-content/uploads/2022/05/conco-founder-03.jpg"
+							alt="Founder Headshot"
+							style="max-width: 180px; border-radius: 8px; box-shadow: 0 0 6px rgba(0,0,0,0.15); width: 100%;">
+					</div>
+
+					<!-- Bio Text -->
+					<div style="flex: 1; min-width: 200px; max-width: 300px;">
+						<p style="font-size: 10.5pt; color: #555; margin: 0; font-family: Noto Sans, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif; ">
+							<strong>Matt Gonsalves</strong><br>
+							Founder & Visionary<br>
+							Since 1959, Matt’s dedication to innovation and quality has guided the company to become a
+							leader in concrete services across the West Coast.
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+
+	</div>
+</body>
+
+</html>
+
+
+</html>
