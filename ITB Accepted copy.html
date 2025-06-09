@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>ITB Received</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+
+		.background-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-image: url('background collage 2.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			min-height: 100vh;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+
+		.banner-header {
+			background-color: rgba(255, 255, 255, 1);
+			/* semi-transparent black 0 < a < 1 */
+			color: #87D300;
+			font-size: 28pt;
+			font-weight: 700;
+			padding: 15px 30px;
+			margin-bottom: 20px;
+			text-align: center;
+			border-radius: 6px;
+			font-family: Noto Sans, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		.content-box {
+			background-color: rgba(255, 255, 255, 1);
+			padding: 30px 20px;
+			border-radius: 8px;
+			max-width: 600px;
+			width: 100%;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			font-family: Noto Sans, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;
+		}
+
+		.content-box h1 {
+			font-size: 24pt;
+			color: #87D300;
+			margin-top: 0;
+			/* hidden since the header is now separated display: none;*/
+		}
+
+		.content-box p {
+			font-size: 13pt;
+			color: #333;
+			line-height: 1.6;
+		}
+
+		.conco-main-page-redirect {
+			cursor: pointer;
+			border: none;
+			border-radius: 2px;
+			background-color: transparent;
+			justify-content: center;
+		}
+
+		.conco-main-page-redirect:hover {
+			opacity: 0.8;
+		}
+
+		.conco-main-page-redirect:active {
+			opacity: 0.5;
+		}
+
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 20px;
+			margin-top: 30px;
+		}
+
+		.footer-links a {
+			text-decoration: none;
+			color: #0077cc;
+			font-size: 10.5pt;
+			font-family: Noto Sans, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;
+			transition: color 0.2s;
+		}
+
+		.footer-links a:hover {
+			text-decoration: underline;
+			color: #005fa3;
+		}
+
+
+		@media (max-width: 600px) {
+			.banner-header {
+				font-size: 18pt;
+				padding: 10px 20px;
+			}
+
+			.content-box {
+				padding: 20px 15px;
+			}
+
+			.content-box p {
+				font-size: 10pt;
+				font-weight: 600;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="background-container">
+		<div class="content-box">
+			<h1>ITB Received</h1>
+			<p>
+				Conco has received your ITB for
+				<strong>{!Get_Opp.Project_Name__r.Name}</strong>.<br>
+				We will provide a <strong>{!BidType}</strong> for this project.<br><br>
+				{!Get_Opp.Estimator__r.FirstName}
+				{!Get_Opp.Estimator__r.LastName}
+				(<a href="mailto:{!Get_Opp.Estimator__r.Email}">{!Get_Opp.Estimator__r.Email}</a>) will be our
+				estimator.<br><br>
+				{!TimelinePhrasing}<br>
+				{!LastLinePhrasing}
+			</p>
+			<div style="text-align: center;">
+				<a href="https://www.conconow.com/" class="conco-main-page-redirect">
+					<img src="https://velocity-app-9197.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=068Vb000006KztW&amp;operationContext=DELIVERY&amp;contentId=05TVb000007I3iA&amp;page=0&amp;d=/a/Vb000003Ec25/X31.rngNX3LXfFqI8i32mN.quofV0bM.e89rgDRF0Ms&amp;oid=00DHp000003V1K0&amp;dpt=null&amp;viewId="
+						alt="Conco-Logo" style="max-width: 160px;">
+				</a>
+			</div>
+			<div class="footer-links">
+				<a href="https://www.conconow.com/services/">Our Services</a>
+				<a href="https://www.conconow.com/projects/">View Projects</a>
+				<a href="https://www.conconow.com/contact/">Contact Us</a>
+				<a href="https://www.conconow.com/about">About Conco</a>
+			</div>
+		</div>
+
+
+	</div>
+</body>
+
+</html>
+
+
+</html>
