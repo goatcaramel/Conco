@@ -1,0 +1,287 @@
+<head>
+
+    <meta charset="UTF-8">
+    <title>Invitation Received</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+        body,
+
+        html {
+
+            margin: 0;
+
+            padding: 0;
+
+            height: 100%;
+
+        }
+
+        .background-container {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background-image: url('https://velocity-app-9197.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Vb00000PtemV&operationContext=DELIVERY&contentId=05TVb00000UXvDt&page=0&d=/a/Vb000003cKOz/tn4R..MsoXykuAQkAvKj9L6LE4rseR3Nwq60w1.g41Q&oid=00DHp000003V1K0&dpt=null&viewId=');
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
+
+            min-height: 100vh;
+
+            padding: 20px;
+
+            box-sizing: border-box;
+
+        }
+
+        .banner-header {
+
+            background-color: rgba(255, 255, 255, 1);
+
+            /* semi-transparent black 0 < a < 1 */
+
+            color: #87D300;
+
+            font-size: 28pt;
+
+            font-weight: 700;
+
+            padding: 15px 30px;
+
+            margin-bottom: 20px;
+
+            text-align: center;
+
+            border-radius: 6px;
+
+            font-family: Noto Sans, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .content-box {
+
+            background-color: rgba(255, 255, 255, 1);
+
+            padding: 30px 20px;
+
+            border-radius: 8px;
+
+            max-width: 600px;
+
+            width: 100%;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            font-family: Noto Sans, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;
+
+        }
+
+        .content-box h1 {
+
+            font-size: 24pt;
+
+            color: #87D300;
+
+            margin-top: 0;
+
+            /* hidden since the header is now separated display: none;*/
+
+        }
+
+        .content-box p {
+
+            font-size: 12pt;
+
+            color: #333;
+
+            line-height: 1.1;
+
+        }
+
+        .conco-main-page-redirect {
+
+            cursor: pointer;
+
+            border: none;
+
+            border-radius: 2px;
+
+            background-color: transparent;
+
+            justify-content: center;
+
+        }
+
+        .conco-main-page-redirect:hover {
+
+            opacity: 0.8;
+
+        }
+
+        .conco-main-page-redirect:active {
+
+            opacity: 0.5;
+
+        }
+
+        .estimated-delivery-header {
+            font-weight: 700;
+            font-size: 18px;
+            color: lightslategray;
+        }
+
+        .salesforce-function-1 {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+
+        .salesforce-function-2 {
+            font-size: 25px;
+            font-weight: 700;
+            line-height: .6;
+        }
+
+
+        /* FIX ME: gap not reading properly in transition to email; adjust to percent-> increased multiplatform functionality and reliability in consistency.
+        changed to table structure to prevent email from stripping dynamic CSS associated with flex and %*/
+        .footer-links {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            /*gap: 4%;*/
+
+            margin-top: 30px;
+
+        }
+
+        .footer-links a {
+
+            text-decoration: none;
+
+            color: #0077cc;
+
+            font-size: 10.5pt;
+
+            font-family: Noto Sans, Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif;
+
+            transition: color 0.2s;
+
+        }
+
+        .footer-links a:hover {
+
+            text-decoration: underline;
+
+            color: #005fa3;
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .banner-header {
+                font-size: 18pt;
+                padding: 10px 20px;
+
+            }
+
+            .content-box {
+                padding: 10px 15px;
+                max-width: 93%;
+            }
+
+            .content-box p {
+                font-size: 11pt;
+                font-weight: 500;
+                line-height: 1.2;
+            }
+
+            .content-box h1 {
+                padding-top: 10px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-container">
+        <div class="content-box">
+            <h1>Invitation Received</h1>
+            <p>
+
+                Hi {!FormattedNames},<br><br>
+
+                Thanks for sending over the invitation to {!BidType}
+                <strong>{!Get_Opp.Project_Name__r.Name}</strong>—we're excited
+                to jump in!<br><br>
+
+                {!Get_Opp.Estimator__r.FirstName}
+                {!Get_Opp.Estimator__r.LastName} (<a
+                    href="mailto:{!Get_Opp.Estimator__r.Email}">{!Get_Opp.Estimator__r.Email}</a>)
+                will be your main
+                point of contact and is getting up to speed on the project's
+                details.<br><br><br>
+
+                <strong class="estimated-delivery-header">Estimated Delivery</strong> <br> 
+                <strong class="salesforce-function-1">Monday</strong><br>   <!--{!ETADateWeekday}{!ETADate}-->
+
+                <strong class="salesforce-function-2">September 16</strong><br><br><br>  
+
+                We’ll check in soon with updates, but if you have any questions
+                or updates in the
+
+                meantime, don’t hesitate to give us a shout.<br><br>
+
+                Best regards,<br><strong>The Conco Estimating Team</strong>
+            </p>
+            <div style="text-align: center;">
+                <a href="https://www.conconow.com/" class="conco-main-page-redirect">
+                    <img src="https://velocity-app-9197.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=068Vb000006KztW&amp;operationContext=DELIVERY&amp;contentId=05TVb000007I3iA&amp;page=0&amp;d=/a/Vb000003Ec25/X31.rngNX3LXfFqI8i32mN.quofV0bM.e89rgDRF0Ms&amp;oid=00DHp000003V1K0&amp;dpt=null&amp;viewId="
+                        alt="Conco-Logo" style="max-width: 160px;">
+                </a>
+            </div>
+            <!--<div class="footer-links">
+                <a href="https://www.conconow.com/services/">Our Services</a>
+                <a href="https://www.conconow.com/projects/">View Projects</a>
+                <a href="https://www.conconow.com/contact/">Contact Us</a>
+                <a href="https://www.conconow.com/about">About Conco</a>
+            </div>-->
+            <table align="center" cellpadding="0" cellspacing="0" role="presentation" class="footer-links">
+                <tr>
+                    <td style="padding: 0 10px;">
+                        <a href="https://www.conconow.com/services/">Our  Services</a>
+                    </td>
+                    <td style="padding: 0 10px;">
+                        <a href="https://www.conconow.com/projects/">View Projects</a>
+                    </td>
+                    <td style="padding: 0 10px;">
+                        <a href="https://www.conconow.com/contact/">Contact Us</a>
+                    </td>
+                    <td style="padding: 0 10px;">
+                        <a href="https://www.conconow.com/about">About Conco</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
