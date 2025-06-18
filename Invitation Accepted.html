@@ -29,7 +29,11 @@
 
             align-items: center;
 
-            background-image: url('https://velocity-app-9197.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068Vb00000PtemV&operationContext=DELIVERY&contentId=05TVb00000UXvDt&page=0&d=/a/Vb000003cKOz/tn4R..MsoXykuAQkAvKj9L6LE4rseR3Nwq60w1.g41Q&oid=00DHp000003V1K0&dpt=null&viewId=');
+            background-image: url('https://live.staticflickr.com/65535/54598972100_4837340aa9_h.jpg');
+
+            background-color: rgba(255,255,255, .3);
+        
+            background-blend-mode: lighten;
 
             background-position: center;
 
@@ -141,18 +145,21 @@
             font-weight: 700;
             font-size: 18px;
             color: lightslategray;
+            padding-left: 5%;
         }
 
         .salesforce-function-1 {
             font-size: 24px;
             font-weight: 700;
             line-height: 1.6;
+            padding-left: 5%;
         }
 
         .salesforce-function-2 {
             font-size: 25px;
             font-weight: 700;
             line-height: .6;
+            padding-left: 5%;
         }
 
 
@@ -236,13 +243,14 @@
 
                 {!Get_Opp.Estimator__r.FirstName}
                 {!Get_Opp.Estimator__r.LastName} (<a
-                    href="mailto:{!Get_Opp.Estimator__r.Email}">{!Get_Opp.Estimator__r.Email}</a>)
+                    href="mailto:{!Get_Opp.Estimator__r.Email}?subject={!Get_Opp.Project_Name__r.Name}">{!Get_Opp.Estimator__r.Email}</a>)
                 will be your main
                 point of contact and is getting up to speed on the project's
                 details.<br><br><br>
 
                 <strong class="estimated-delivery-header">Estimated Delivery</strong> <br> 
                 <strong class="salesforce-function-1">{!ETADateWeekday}</strong><br> 
+
                 <strong class="salesforce-function-2">{!ETADate}</strong><br><br><br>  
 
                 We’ll check in soon with updates, but if you have any questions
@@ -271,9 +279,6 @@
                     </td>
                     <td style="padding: 0 10px;">
                         <a href="https://www.conconow.com/projects/">View Projects</a>
-                    </td>
-                    <td style="padding: 0 10px;">
-                        <a href="https://www.conconow.com/contact/">Contact Us</a>
                     </td>
                     <td style="padding: 0 10px;">
                         <a href="https://www.conconow.com/about">About Conco</a>
