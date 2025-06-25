@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- FOR SALESFORCE: COPY EVERYTHING BELOW THIS COMMENT -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invitation Received</title>
+
+    <!-- Fonts -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <!-- Dynamic content case adjustments for smaller screens -->
+    <style>
+        @media only screen and (max-width: 675px) {
+            table[role="presentation"][width="675"] {
+                width: 95% !important;
+            }
+
+            td {
+                padding: 20px !important;
+            }
+
+            h1 {
+                font-size: 20px !important;
+            }
+
+            p, strong {
+                font-size: 14px !important;
+                line-height: 1.5 !important;
+            }
+
+            .icon-warning {
+                display: block !important;
+                text-align: center !important;
+                margin: 15px 0 !important;
+            }
+
+            .icon-warning i {
+                margin: 0 auto 10px auto !important;
+                display: block !important;
+            }
+
+            .footer-links td {
+                display: table-cell !important;
+                text-align: center;
+                padding: 0 8px !important;
+                font-size: 13px !important;
+                white-space: nowrap;
+            }
+
+        }
+    </style>
 </head>
 
 <body style="margin:0; padding:0; background-color:#f5f5f5; font-family:'Noto Sans', sans-serif;">
@@ -20,55 +66,48 @@
                 <table role="presentation" width="675" cellspacing="0" cellpadding="0" border="0"
                     style="background-color:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 0 10px rgba(0, 0, 0, 0.1);">
 
-                    <!-- Header Banner -->
+                    <!-- Header Banner: Discipline Image -->
                     <tr>
                         <td
                             style="background: url('https://photos.smugmug.com/Conco/n-Q7QwcQ/Jobs/John-Muir/i-LVnTFWB/0/MN7NDXx4gGX33qX2vwGV68mrnXmsg45MmdthWmS6S/X2/DSC04862-X2.jpg') no-repeat center / cover; height: 275px; background-position: 0 40%;">
                         </td>
                     </tr>
 
-                    <!-- Content Section -->
+                    <!-- Content Section: Body text of the email -->
                     <tr>
                         <td style="padding: 30px; font-family:'Noto Sans', 'Roboto', sans-serif;">
-                            <h1 style="margin:0 0 20px; font-size:24px; color:#87D300; text-align:left;">Invitation
-                                Received</h1>
+                            <h1 style="margin:0 0 20px; font-size:24px; color:#87D300; text-align:left;">Invitation Received</h1>
                             <p style="font-size:15px; color:#333333; line-height:1.4; font-weight:500;">
                                 Hi {!FormattedNames},<br><br>
-                                Thanks for sending over the invitation to
-                                {!BidType}
-                                <strong>{!Get_Opp.Project_Name__r.Name}</strong>
-                                — we're excited to jump in!<br><br>
+                                Thanks for sending over the invitation to {!BidType}
+                                <strong>{!Get_Opp.Project_Name__r.Name}</strong> — we're excited to jump in!<br><br>
 
-                                {!Get_Opp.Estimator__r.FirstName}
-                                {!Get_Opp.Estimator__r.LastName} (
-                                <a href="mailto:{!Get_Opp.Estimator__r.Email}?subject={!Get_Opp.Project_Name__r.Name}"
-                                    style="color:#0077cc; text-decoration:none;">
+                                {!Get_Opp.Estimator__r.FirstName} {!Get_Opp.Estimator__r.LastName} (
+                                <a href="mailto:{!Get_Opp.Estimator__r.Email}?subject={!Get_Opp.Project_Name__r.Name}" style="color:#0077cc; text-decoration:none;">
                                     {!Get_Opp.Estimator__r.Email}
-                                </a>) will be your main point of contact and
-                                is getting up to speed on the project's
+                                </a>) will be your main point of contact and is getting up to speed on the project's
                                 details.<br><br>
 
                                 <strong style="color:lightslategray; font-size:16px; padding-left:2.5%">Estimated Delivery</strong><br>
                                 <span style="font-size:20px; font-weight:700; color:#222; padding-left:2.5%">{!ETADateWeekday}</span><br>
                                 <span style="font-size:22px; font-weight:700; color:#222; padding-left:2.5%">{!ETADate}</span><br>
+
                             </p>
 
-                            <div
-                                style="display: flex; align-items: center; justify-content: left; margin: 10px 0; padding: 5px 0px; max-width: 100%;">
-                                <i class="fas fa-exclamation-triangle"
-                                    style="font-size: 20px; color: #BB5219; margin-right: 10px;"></i>
-                                <strong style="font-size:15px; color:#BB5219; font-weight:500;"> This is later than the due date in your
-                                    original request. Please respond to this email to confirm this date will work for
-                                    your timeline.
+                            <!-- Warning Section for ETA past requested date -->
+                            <div class="icon-warning" style="display: flex; align-items: center; justify-content: left; margin: 10px 0; padding: 5px 0px; max-width: 100%;">
+                                <i class="fas fa-exclamation-triangle" style="font-size: 20px; color: #BB5219; margin-right: 10px;"></i>
+                                <strong style="font-size:15px; color:#BB5219; font-weight:500;">
+                                    This is later than the due date in your original request. Please respond to this
+                                    email to confirm this date will work for your timeline.
                                 </strong>
                             </div>
-                            
-                            <p style="font-size:15px; color:#333333; line-height:1.4; font-weight:500;">
-                            We’ll check in soon with updates, but if you
-                            have any questions or updates in the
-                            meantime, don’t hesitate to give us a shout.<br><br>
 
-                            Best regards,<br><strong>The Conco Estimating Team</strong>
+                            <p style="font-size:15px; color:#333333; line-height:1.4; font-weight:500;">
+                                We’ll check in soon with updates, but if you have any questions or updates in the
+                                meantime, don’t hesitate to give us a shout.<br><br>
+
+                                Best regards,<br><strong>The Conco Estimating Team</strong>
                             </p>
 
                             <div style="text-align:left; margin-top:30px;">
@@ -83,17 +122,27 @@
                     <!-- Footer Links -->
                     <tr>
                         <td align="center" style="padding: 20px 0; background-color: #f0f0f0;">
-                            <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                            <table class="footer-links" role="presentation" cellspacing="0" cellpadding="0" border="0">
                                 <tr>
-                                    <td style="padding: 0 10px;"><a href="https://www.conconow.com/services/"
-                                            style="font-size:13px; color:#0077cc; text-decoration:none;">Our
-                                            Services</a></td>
-                                    <td style="padding: 0 10px;"><a href="https://www.conconow.com/projects/"
-                                            style="font-size:13px; color:#0077cc; text-decoration:none;">View
-                                            Projects</a></td>
-                                    <td style="padding: 0 10px;"><a href="https://www.conconow.com/about"
-                                            style="font-size:13px; color:#0077cc; text-decoration:none;">About
-                                            Conco</a>
+                                    <td style="padding: 0 10px;">
+                                        <a href="https://www.conconow.com/services/"
+                                            style="font-size:13px; color:#0077cc; text-decoration:none;">
+                                            Our Services
+                                        </a>
+                                    </td>
+                                    <td style="font-size:13px; color:#999;">&bull;</td>
+                                    <td style="padding: 0 10px;">
+                                        <a href="https://www.conconow.com/projects/"
+                                            style="font-size:13px; color:#0077cc; text-decoration:none;">
+                                            View Projects
+                                        </a>
+                                    </td>
+                                    <td style="font-size:13px; color:#999;">&bull;</td>
+                                    <td style="padding: 0 10px;">
+                                        <a href="https://www.conconow.com/about"
+                                            style="font-size:13px; color:#0077cc; text-decoration:none;">
+                                            About Conco
+                                        </a>
                                     </td>
                                 </tr>
                             </table>
@@ -105,5 +154,5 @@
         </tr>
     </table>
 </body>
-
+<!-- FOR SALESFORCE: COPY EVERYTHING ABOVE THIS COMMENT -->
 </html>
