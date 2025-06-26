@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitation Received</title>
+
+  <!-- Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <!-- Styles -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    .outer-wrapper {
+      width: 675px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+      padding: 30px;
+      font-family: 'Noto Sans', 'Roboto', sans-serif;
+    }
+
+    .heading {
+      margin: 0 0 20px;
+      font-size: 24px;
+      color: #87D300;
+      text-align: left;
+    }
+
+    .body-text {
+      font-size: 14px;
+      color: #333333;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .eta-label {
+      color: lightslategray;
+      font-size: 16px;
+      padding-left: 2.5%;
+    }
+
+    .eta-date, .eta-weekday {
+      font-weight: 700;
+      color: #222;
+      padding-left: 2.5%;
+    }
+
+    .eta-weekday {
+      font-size: 20px;
+    }
+
+    .eta-date {
+      font-size: 22px;
+    }
+
+    .icon-warning {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      margin: 10px 0;
+      padding: 5px 0px;
+      max-width: 100%;
+    }
+
+    .icon-warning i {
+      font-size: 20px;
+      color: #BB5219;
+      margin-right: 10px;
+    }
+
+    .icon-warning strong {
+      font-size: 14px;
+      color: #BB5219;
+      font-weight: 500;
+    }
+
+    .footer-links td {
+      padding: 0 10px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .footer-separator {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .conco-logo {
+      max-width: 160px;
+    }
+
+    @media only screen and (max-width: 675px) {
+      .outer-wrapper {
+        width: 95%;
+        max-width: 500px;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .heading {
+        font-size: 27px;
+      }
+
+      .body-text, strong {
+        font-size: 17px;
+        line-height: 1.5;
+      }
+
+      .conco-logo {
+        max-width: 80px;
+      }
+
+      .eta-label {
+        font-size: 20px;
+      }
+
+      .eta-weekday {
+        font-size: 26px;
+      }
+
+      .eta-date {
+        font-size: 28px;
+      }
+      .icon-warning {
+        display: block;
+        text-align: center;
+        margin: 25px 0;
+        font-size: 17px;
+      }
+
+      .icon-warning i {
+        margin: 0 auto 10px auto;
+        display: block;
+      }
+
+      .footer-links td {
+        font-size: 11px;
+        padding: 0 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td align="center" style="padding-top: 2.5%; padding-bottom: 2.5%;">
+        <table role="presentation" class="outer-wrapper" cellspacing="0" cellpadding="0" border="0">
+
+          <!-- Header Banner
+          <tr>
+            <td style="background: url('https://photos.smugmug.com/Conco/n-Q7QwcQ/Jobs/John-Muir/i-LVnTFWB/0/MN7NDXx4gGX33qX2vwGV68mrnXmsg45MmdthWmS6S/X2/DSC04862-X2.jpg') no-repeat center / cover; height: 275px;"></td>
+          </tr> -->
+
+          <!-- Content -->
+          <tr>
+            <td class="content">
+              <h1 class="heading">Invitation Received</h1>
+              <p class="body-text">
+                Hi {!FormattedNames},<br><br>
+                Thanks for sending over the invitation to {!BidType} <strong>{!Get_Opp.Project_Name__r.Name}</strong> — we're excited to jump in!<br><br>
+
+                {!Get_Opp.Estimator__r.FirstName} {!Get_Opp.Estimator__r.LastName} (
+                <a href="mailto:{!Get_Opp.Estimator__r.Email}?subject={!Get_Opp.Project_Name__r.Name}" style="color:#0077cc; text-decoration:none;">
+                  {!Get_Opp.Estimator__r.Email}
+                </a>) will be your main point of contact and is getting up to speed on the project's details.<br><br>
+
+                <strong class="eta-label">Estimated Delivery</strong><br>
+                <span class="eta-weekday">{!ETADateWeekday}</span><br>
+                <span class="eta-date">{!ETADate}</span><br>
+              </p>
+
+              <div class="icon-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>
+                  This is later than the due date in your original request. Please respond to this email to confirm this date will work for your timeline.
+                </strong>
+              </div>
+
+              <p class="body-text">
+                We’ll check in soon with updates, but if you have any questions or updates in the meantime, don’t hesitate to give us a shout.<br><br>
+                Best regards,<br><strong>The Conco Estimating Team</strong>
+              </p>
+
+              <div style="text-align:center; margin-top:30px;">
+                <a href="https://www.conconow.com/">
+                  <img src="https://velocity-app-9197.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&amp;versionId=068Vb000006KztW&amp;operationContext=DELIVERY&amp;contentId=05TVb000007I3iA&amp;page=0&amp;d=/a/Vb000003Ec25/X31.rngNX3LXfFqI8i32mN.quofV0bM.e89rgDRF0Ms&amp;oid=00DHp000003V1K0&amp;dpt=null&amp;viewId=" alt="Conco Logo" class="conco-logo">
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align="center" style="padding: 20px 0; background-color: #f0f0f0;">
+              <table class="footer-links" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td><a href="https://www.conconow.com/services/">Our Services</a></td>
+                  <td class="footer-separator">&bull;</td>
+                  <td><a href="https://www.conconow.com/projects/">View Projects</a></td>
+                  <td class="footer-separator">&bull;</td>
+                  <td><a href="https://www.conconow.com/about">About Conco</a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
